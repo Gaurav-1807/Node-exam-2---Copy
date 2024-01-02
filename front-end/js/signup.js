@@ -1,16 +1,23 @@
 const signup = (e) => {
     e.preventDefault();
-    const username = document.getElementById('username-signup').value;
-    const password = document.getElementById('password-signup').value;
-    console.log(username, password);
-     fetch('http://localhost:8090/signup', {
+    let obj ={
+       email : document.getElementById("email-signup").value,
+     username : document.getElementById('username-signup').value,
+     password : document.getElementById('password-signup').value,
+    }
+    // console.log(username,email, password);
+  
+     fetch('http://localhost:8090/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
-    });
-    alert('Signup successful')
+      body: JSON.stringify(obj),
+    })
+   .then((res)=>res.json())
+   .then((data)=> document.cookie = `id = ${data._id}`)
+   .catch((error)=> console.error(error))
+   
     // const data = response.json();
     // console.log(data);
   }

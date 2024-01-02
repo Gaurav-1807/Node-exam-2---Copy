@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        nav {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        li a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="product.html">Product</a>
+
+            </li>
+            <li>
+                <a href="productform.html">Add Products</a>
+            </li>
+            <li>
+                <a href="signup.html">Sign up</a>
+
+            </li>
+            <li>
+                <a href="login.html">Login</a>
+
+            </li>
+        </ul>
+    </nav>
     <form id="login-form">
-        <input type="text" id="username" placeholder="username" >
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="email">
         <input type="text" id="password" placeholder="password">
         <input value="login" type="submit">
     </form>
 </body>
 <script src="../js/login.js"></script>
+
 </html>

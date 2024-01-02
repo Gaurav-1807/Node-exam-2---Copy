@@ -1,15 +1,20 @@
 const login =(e) =>{
   e.preventDefault();
-  const username = document.getElementById('username').value;
+  const email = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-   fetch('http://localhost:8090/login', {
+   fetch('http://localhost:8090/user/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ username, password }),
-  });
+    body: JSON.stringify({ email, password }),
+  })
+  .then((response) => response.json())
+  .then((data)=> document.cookie = `id = ${data._id}`,{
+    
+   })
+   .catch((error) =>console.error(error));
 
  
 }
